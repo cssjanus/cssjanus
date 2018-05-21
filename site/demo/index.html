@@ -2,9 +2,18 @@
 <html>
 <meta charset="utf-8">
 <title>CSSJanus Demos</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="../site.css">
 <style id="css">
+
+/*
+Insert bootstrap copy here directly so that it can be transformed as necessary.
+noflip rules inserted where appropriate, extraneous code removed via uncss.
+*/
+/*!
+* Bootstrap v3.2.0 (http://getbootstrap.com)
+* Copyright 2011-2014 Twitter, Inc.
+* Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+*//*! normalize.css v3.0.1 | MIT License | git.io/normalize */html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}footer{display:block}a{background:0 0}a:active,a:hover{outline:0}h1{margin:.67em 0;font-size:2em}code{font-family:monospace,monospace;font-size:1em}button{margin:0;font:inherit;color:inherit}button{overflow:visible}button{text-transform:none}button{-webkit-appearance:button;cursor:pointer}button::-moz-focus-inner{padding:0;border:0}@media print{*{color:#000!important;text-shadow:none!important;background:transparent!important;-webkit-box-shadow:none!important;box-shadow:none!important}a,a:visited{text-decoration:underline}a[href]:after{content:" (" attr(href) ")"}p,h3{orphans:3;widows:3}h3{page-break-after:avoid}}@font-face{font-family:'Glyphicons Halflings';src:url(../fonts/glyphicons-halflings-regular.eot);src:url(../fonts/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'),url(../fonts/glyphicons-halflings-regular.woff) format('woff'),url(../fonts/glyphicons-halflings-regular.ttf) format('truetype'),url(../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg')}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}:before,:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{font-size:10px;-webkit-tap-highlight-color:rgba(0,0,0,0)}body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857143;color:#333;background-color:#fff}button{font-family:inherit;font-size:inherit;line-height:inherit}a{color:#428bca;text-decoration:none}a:hover,a:focus{color:#2a6496;text-decoration:underline}a:focus{outline:thin dotted;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}h1,h3{font-family:inherit;font-weight:500;line-height:1.1;color:inherit}h1,h3{margin-top:20px;margin-bottom:10px}h1{font-size:36px}h3{font-size:24px}p{margin:0 0 10px}.lead{margin-bottom:20px;font-size:16px;font-weight:300;line-height:1.4}@media (min-width:768px){.lead{font-size:21px}}.page-header{padding-bottom:9px;margin:40px 0 20px;border-bottom:1px solid #eee}ul{margin-top:0;margin-bottom:10px}code{font-family:Menlo,Monaco,Consolas,"Courier New",monospace}code{padding:2px 4px;font-size:90%;color:#c7254e;background-color:#f9f2f4;border-radius:4px}.container{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:768px){.container{width:750px}}@media (min-width:992px){.container{width:970px}}@media (min-width:1200px){.container{width:1170px}}/*@noflip*/.btn{display:inline-block;padding:6px 12px;margin-bottom:0;font-size:14px;font-weight:400;line-height:1.42857143;text-align:center;white-space:nowrap;vertical-align:middle;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;border:1px solid transparent;border-radius:4px}.btn:focus,.btn:active:focus{outline:thin dotted;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}.btn:hover,.btn:focus{color:#333;text-decoration:none}/*@noflip*/.btn:active{background-image:none;outline:0;-webkit-box-shadow:inset 0 3px 5px rgba(0,0,0,.125);box-shadow:inset 0 3px 5px rgba(0,0,0,.125)}.btn-default{color:#333;background-color:#fff;border-color:#ccc}.btn-default:hover,.btn-default:focus,.btn-default:active{color:#333;background-color:#e6e6e6;border-color:#adadad}.btn-default:active{background-image:none}.btn-group{position:relative;display:inline-block;vertical-align:middle}/*@noflip*/.btn-group>.btn{position:relative;float:left}.btn-group>.btn:hover,.btn-group>.btn:focus,.btn-group>.btn:active{z-index:2}.btn-group>.btn:focus{outline:0}.btn-group /*@noflip*/.btn+.btn{margin-left:-1px}.btn-group>.btn:not(:first-child):not(:last-child):not(.dropdown-toggle){border-radius:0}/*@noflip*/.btn-group>.btn:first-child{margin-left:0}/*@noflip*/.btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle){border-top-right-radius:0;border-bottom-right-radius:0}/*@noflip*/.btn-group>.btn:last-child:not(:first-child){border-top-left-radius:0;border-bottom-left-radius:0}.list-group{padding-left:0;margin-bottom:20px}.list-group-item{position:relative;display:block;padding:10px 15px;margin-bottom:-1px;background-color:#fff;border:1px solid #ddd}.list-group-item:first-child{border-top-left-radius:4px;border-top-right-radius:4px}.list-group-item:last-child{margin-bottom:0;border-bottom-right-radius:4px;border-bottom-left-radius:4px}.panel{margin-bottom:20px;background-color:#fff;border:1px solid transparent;border-radius:4px;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);box-shadow:0 1px 1px rgba(0,0,0,.05)}.panel-body{padding:15px}.panel-heading{padding:10px 15px;border-bottom:1px solid transparent;border-top-left-radius:3px;border-top-right-radius:3px}.panel-title{margin-top:0;margin-bottom:0;font-size:16px;color:inherit}.panel-default{border-color:#ddd}.panel-default>.panel-heading{color:#333;background-color:#f5f5f5;border-color:#ddd}.well{min-height:20px;padding:19px;margin-bottom:20px;background-color:#f5f5f5;border:1px solid #e3e3e3;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.05);box-shadow:inset 0 1px 1px rgba(0,0,0,.05)}.well-sm{padding:9px;border-radius:3px}.clearfix:before,.clearfix:after,.container:before,.container:after,.panel-body:before,.panel-body:after{display:table;content:" "}.clearfix:after,.container:after,.panel-body:after{clear:both}@-ms-viewport{width:device-width}
+	
 	body {
 		writing-mode: lr-tb;
 		-o-writing-mode: horizontal-tb;
@@ -66,7 +75,7 @@
 	.floatpointer {
 		display: inline-block;
 		padding-right: 20px;
-		background: url(Arrow-ltr-inline.png) no-repeat 100% 50%;
+		background: url(Arrow-lr-inline.png) no-repeat 100% 50%;
 	}
 
 	/* Sides */
@@ -143,8 +152,7 @@
 	.border-images {
 		border: solid;
 		border-width: 28px 10px 10px 14px;
-		/* @noflip */
-		border-image: url(borderimage-ltr.png) 16 10 10 28 / 28px 10px 10px 14px round stretch;
+		border-image: url(borderimage-lr-tb.png) 16 10 10 28 / 28px 10px 10px 14px round stretch;
 		line-height: 28px;
 		padding: 4px 8px;
 		display: inline-block;
@@ -280,7 +288,7 @@
 	/* Background images */
 
 	ul.outer {
-		list-style-image: url(Arrow-ltr-inline.png);
+		list-style-image: url(Arrow-lr-inline.png);
 	}
 
 	ul.inner {
@@ -293,15 +301,25 @@
 	}
 
 	ul.inner .inline-start-background {
-		background-image: url(Arrow-ltr-inline.png);
+		background-image: url(Arrow-lr-inline.png);
 		background-repeat: no-repeat;
 		background-position: 0% 50%;
 		padding-left: 20px;
 	}
 
 	ul.inner .block-after-background {
-		background: url(Arrow-ltr-inline.png) repeat no-repeat bottom;
+		background: url(Arrow-lr-inline.png) repeat no-repeat bottom;
 		padding-bottom: 20px;
+	}
+
+	.demo-footer {
+		padding-top: 40px;
+		padding-bottom: 40px;
+		margin-top: 100px;
+		background: #f9f9f9;
+		color: #777;
+		text-align: center;
+		border-top: 1px solid #e5e5e5
 	}
 
 	/* @noflip */
@@ -463,8 +481,10 @@
 </div>
 <div class="cje-form">
 	<div class="btn-group" role="group">
-		<button type="button" class="btn btn-default" data-value="ltr">LTR</button>
-		<button type="button" class="btn btn-default" data-value="rtl">RTL</button>
+		<button type="button" class="btn btn-default" data-value="lr-tb">LTR</button>
+		<button type="button" class="btn btn-default" data-value="rl-tb">RTL</button>
+		<button type="button" class="btn btn-default" data-value="tb-lr">TB-LR</button>
+		<button type="button" class="btn btn-default" data-value="tb-rl">TB-RL</button>
 	</div>
 </div>
 <footer class="demo-footer" role="contentinfo">
@@ -482,13 +502,17 @@
 	for ( var i = 0; i < buttons.length; i++ ) {
 		buttons[ i ].onclick = function () {
 			var value = this.getAttribute( 'data-value' );
-			if ( value === 'ltr' ) {
+			if ( value === 'lr-tb' ) {
 				cssElem.firstChild.nodeValue = css;
 			} else {
 				cssElem.firstChild.nodeValue = cssjanus.transform(
 					css,
-					true,
-					true
+					{
+						transformDirInUrl: true,
+						transformEdgeInUrl: true,
+						sourceDir: 'lr-tb',
+						targetDir: value
+					}
 				);
 			}
 			this.className += ' active';

@@ -7,18 +7,21 @@ module.exports = function ( grunt ) {
 			testData = require( '../../test/data.json' ),
 			failures = 0,
 			tests = 0,
-			name, test, args, i, input, noop, roundtrip, output;
+			name, test, args, options, i, input, noop, roundtrip, output, tblrOutput, tbrlOutput;
 
 		for ( name in testData ) {
 			tests++;
 			test = testData[ name ];
-			args = test.args || [ test.options || {} ];
+			options = test.options || {};
+			args = test.args || [ options ];
 
 			try {
 				for ( i = 0; i < test.cases.length; i++ ) {
 					input = test.cases[ i ][ 0 ];
-					noop = test.cases[ i ][ 1 ] === undefined;
+					noop = !test.cases[ i ][ 1 ];
 					output = noop ? input : test.cases[ i ][ 1 ];
+					tblrOutput = test.cases[ i ][ 2 ] || input;
+					tbrlOutput = test.cases[ i ][ 3 ] || tblrOutput;
 					roundtrip = test.roundtrip !== undefined ? test.roundtrip : !noop;
 
 					assert.equal(
@@ -31,7 +34,7 @@ module.exports = function ( grunt ) {
 					);
 
 					if ( roundtrip ) {
-						// Round-trip
+						// Round-trip right-to-left
 						assert.equal(
 							cssjanus.transform(
 								output,
@@ -47,6 +50,26 @@ module.exports = function ( grunt ) {
 							'case #' + ( i + 1 ) + ' should not specify output if it matches the input'
 						);
 						output = test.cases[ i ][ 1 ];
+					}
+
+					if ( !test.args ) {
+						// If an explicit args is given, don't run tests for vertical-writing.
+						// Boolean args not compatible with vertical transforms.
+						assert.equal(
+							cssjanus.transform(
+								input,
+								Object.assign( { sourceDir: 'lr-tb', targetDir: 'tb-lr' }, options )
+							),
+							tblrOutput
+						);
+
+						assert.equal(
+							cssjanus.transform(
+								input,
+								Object.assign( { sourceDir: 'lr-tb', targetDir: 'tb-rl' }, options )
+							),
+							tbrlOutput
+						);
 					}
 				}
 				grunt.verbose.write( name + '...' );
